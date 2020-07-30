@@ -1,0 +1,55 @@
+let distributorsColumns = [
+	{
+		name: "firstName",
+		required: true,
+		label: "نام",
+		align: "left",
+		field: row => row.firstName,
+		format: val => `${val}`,
+		sortable: true,
+	},
+	{
+		name: "lastName",
+		required: true,
+		label: "نام خانوادگی",
+		align: "left",
+		field: row => row.lastName,
+		format: val => `${val}`,
+		sortable: true,
+	},
+	{
+		name: "nationalId",
+		required: true,
+		label: "کد ملی",
+		align: "left",
+		field: row => row.nationalId,
+		format: val => `${val}`,
+		sortable: true,
+	},
+	{
+		name: "mobileNumber",
+		required: true,
+		label: "تلفن همراه",
+		align: "left",
+		field: row => row.mobileNumber,
+		format: val => `${val}`,
+		sortable: true,
+	},
+	{
+		name: "description",
+		required: true,
+		label: "توضیحات",
+		align: "left",
+		field: row => row.description,
+		format: val => `${val}`,
+		sortable: true,
+	},
+	{
+		name: "operations",
+		label: null,
+		field: "iron",
+		align: "right",
+	},
+];
+
+export { distributorsColumns };

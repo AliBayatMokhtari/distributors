@@ -1,0 +1,34 @@
+// app global css in SCSS form
+// @import "./quasar.variables.scss";
+
+@font-face {
+	font-family: Vazir;
+	src: url("../css/fonts/Vazir-FD-WOL.ttf") format("truetype");
+	font-weight: normal;
+	font-style: normal;
+}
+
+html,
+body {
+	min-height: 100%;
+	height: 100%;
+}
+
+*,
+body {
+	font-family: Vazir;
+}
+
+.layout {
+	.q-drawer {
+		.drawer_content {
+			.essentialLink_item {
+				border-radius: 0.5rem;
+			}
+		}
+		.q-router-link--exact-active {
+			background-color: $primary;
+			color: white;
+		}
+	}
+}
