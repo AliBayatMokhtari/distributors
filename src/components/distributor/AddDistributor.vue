@@ -146,7 +146,7 @@ export default {
 							this.addButtonLoading = false;
 						}, 1000);
 						notification.showFailedNotification(
-							constants.notification.onFailed,
+							constants.messages.notification.onFailed,
 							null,
 							1500
 						);
@@ -156,7 +156,7 @@ export default {
 						this.addButtonLoading = false;
 					}, 1000);
 					notification.showFailedNotification(
-						constants.notification.onConnectionError,
+						constants.messages.notification.onConnectionError,
 						null,
 						1500
 					);
@@ -170,7 +170,7 @@ export default {
 	},
 	computed: {
 		successAddMessage() {
-			return "موزع" + " " + constants.notification.onSuccessfullCreate;
+			return "موزع" + " " + constants.messages.notification.onSuccessfullCreate;
 		},
 	},
 	mounted() {
