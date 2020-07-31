@@ -27,7 +27,7 @@
 						</q-input>
 						<q-space />
 						<q-btn
-							@click="$emit('showAddDialog')"
+							@click="$emit('addNew')"
 							color="primary"
 							icon="add"
 							label="جدید"

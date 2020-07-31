@@ -15,17 +15,21 @@
 			:title="tableTitle"
 			:tablePagination="pagination"
 			@reloadTable="pagination => reloadTable(pagination)"
+			@addNew="showAddDialog"
 		/>
+
+		<add-distributor ref="addDialog" @reloadTable="reloadTable" />
 	</div>
 </template>
 
 <script>
 import DistributorsTable from "../components/basic/Table.vue";
+import AddDistributor from "../components/distributor/AddDistributor.vue";
 import { distributorsColumns } from "../utils/columns";
 import distributor from "../api/distributor";
 
 export default {
-	components: { DistributorsTable },
+	components: { DistributorsTable, AddDistributor },
 	data: () => ({
 		data: [],
 		columns: [],
@@ -52,6 +56,9 @@ export default {
 				this.data = ans.items;
 				this.tableLoading = false;
 			}
+		},
+		showAddDialog() {
+			this.$refs.addDialog.show();
 		},
 	},
 	computed: {},
