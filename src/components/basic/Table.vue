@@ -57,7 +57,7 @@
 					<q-td :props="props" key="operations">
 						<div class="flex justify-end q-gutter-x-xs">
 							<q-btn
-								@click="$emit('edit', props.row)"
+								@click="$emit('edit', props.row.id)"
 								color="warning"
 								dense
 								flat

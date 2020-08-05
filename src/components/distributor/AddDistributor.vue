@@ -51,7 +51,6 @@
 					v-model="distributor.confirmPassword"
 				/>
 				<q-input
-					:rules="[val => !!val || rules.common.required]"
 					class="col-12"
 					label="توضیحات"
 					ref="description"

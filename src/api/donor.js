@@ -6,7 +6,12 @@ export default {
 	async getDonors(page, take) {
 		const res = await axios.get(`${url}?page=${page}&take=${take}`);
 		const { success, error } = res.data;
-		return success && !error ? res.data.result.items : null;
+		return success && !error ? res.data.result : null;
+	},
+	async getDonor (id) {
+		const res = await axios.get(`${url}/${id}`);
+		const {success, error} = res.data;
+		return success && !error ? res.data.result : null;
 	},
 	async addDonor(data) {
 		const res = await axios.post(url, data);

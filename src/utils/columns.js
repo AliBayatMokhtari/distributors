@@ -52,4 +52,54 @@ let distributorsColumns = [
 	},
 ];
 
-export { distributorsColumns };
+let donorColumns = [
+	{
+		name: "fullName",
+		required: true,
+		label: "نام کامل",
+		align: "left",
+		field: row => row.fullName,
+		format: val => `${val}`,
+		sortable: true,
+	},
+	{
+		name: "address",
+		required: true,
+		label: "آدرس",
+		align: "left",
+		field: row => row.address,
+		format: val => `${val}`,
+	},
+	{
+		name: "phoneNumber",
+		required: true,
+		label: "تلفن ثابت",
+		align: "left",
+		field: row => row.phoneNumber,
+		format: val => `${val}`,
+	},
+	{
+		name: "mobileNumber",
+		required: true,
+		label: "تلفن همراه",
+		align: "left",
+		field: row => row.mobileNumber,
+		format: val => `${val}`,
+	},
+	{
+		name: "description",
+		required: true,
+		label: "توضیحات",
+		align: "left",
+		field: row => row.description,
+		format: val => `${val}`,
+	},
+	{
+		name: "operations",
+		label: null,
+		field: "iron",
+		align: "right",
+	},
+];
+
+export { distributorsColumns, donorColumns };

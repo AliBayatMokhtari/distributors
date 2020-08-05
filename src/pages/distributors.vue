@@ -16,20 +16,23 @@
 			:tablePagination="pagination"
 			@reloadTable="pagination => reloadTable(pagination)"
 			@addNew="showAddDialog"
+			@edit="id => showEditDialog(id)"
 		/>
 
 		<add-distributor ref="addDialog" @reloadTable="reloadTable" />
+		<edit-distributor ref="editDialog" @reloadTable="reloadTable" />
 	</div>
 </template>
 
 <script>
 import DistributorsTable from "../components/basic/Table.vue";
 import AddDistributor from "../components/distributor/AddDistributor.vue";
+import EditDistributor from "../components/distributor/EditDistributor.vue";
 import { distributorsColumns } from "../utils/columns";
 import distributor from "../api/distributor";
 
 export default {
-	components: { DistributorsTable, AddDistributor },
+	components: { DistributorsTable, AddDistributor, EditDistributor },
 	data: () => ({
 		data: [],
 		columns: [],
@@ -60,9 +63,12 @@ export default {
 		showAddDialog() {
 			this.$refs.addDialog.show();
 		},
+		showEditDialog(id) {
+			this.$refs.editDialog.show(id);
+		},
 	},
 	computed: {},
-	beforeMount() {
+	beforeMount () {
 		this.columns = distributorsColumns;
 		this.reloadTable();
 	},

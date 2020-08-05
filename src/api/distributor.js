@@ -8,6 +8,11 @@ export default {
 		const { success, error } = res.data;
 		return success && !error ? res.data.result : null;
 	},
+	async getDistributor(id) {
+		const res = await axios.get(`${url}/${id}`);
+		const { success, error } = res.data;
+		return success && !error ? res.data.result : null;
+	},
 	async addDistributor(data) {
 		const res = await axios.post(url, data);
 		const { success, error } = res.data;

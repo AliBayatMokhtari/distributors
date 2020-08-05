@@ -59,6 +59,11 @@ const linksData = [
 		icon: "person",
 		link: "/distributors",
 	},
+	{
+		title: "خیرین",
+		icon: "person",
+		link: "/donors",
+	},
 	// {
 	// 	title: "خیرین",
 	// 	icon: "person",
