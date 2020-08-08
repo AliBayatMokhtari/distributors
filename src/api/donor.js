@@ -8,7 +8,7 @@ export default {
 		const { success, error } = res.data;
 		return success && !error ? res.data.result : null;
 	},
-	async getDonor (id) {
+	async getDonor(id) {
 		const res = await axios.get(`${url}/${id}`);
 		const {success, error} = res.data;
 		return success && !error ? res.data.result : null;
@@ -24,7 +24,7 @@ export default {
 		return success && !error;
 	},
 	async deleteDonor(id) {
-		const res = await axios.put(`${url}/${id}`);
+		const res = await axios.delete(`${url}/${id}`);
 		const { success, error } = res.data;
 		return success && !error;
 	},

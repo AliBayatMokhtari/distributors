@@ -55,23 +55,28 @@
 						{{ props.row[rowKey] }}
 					</q-td>
 					<q-td :props="props" key="operations">
-						<div class="flex justify-end q-gutter-x-xs">
-							<q-btn
-								@click="$emit('edit', props.row.id)"
-								color="warning"
-								dense
-								flat
-								icon="edit"
-								round
-							/>
-							<q-btn
-								@click="$emit('delete', props.row.id)"
-								color="negative"
-								dense
-								flat
-								icon="delete"
-								round
-							/>
+						<div>
+							<q-btn icon="more_vert" flat round dense>
+								<DonorOperationsMenu @edit="$emit('edit', props.row.id)"
+													 @wantToDelete="$emit('delete',
+													 props.row.id)" />
+							</q-btn>
+<!--							<q-btn-->
+<!--								@click="$emit('edit', props.row.id)"-->
+<!--								color="warning"-->
+<!--								dense-->
+<!--								flat-->
+<!--								icon="edit"-->
+<!--								round-->
+<!--							/>-->
+<!--							<q-btn-->
+<!--								@click="$emit('delete', props.row.id)"-->
+<!--								color="negative"-->
+<!--								dense-->
+<!--								flat-->
+<!--								icon="delete"-->
+<!--								round-->
+<!--							/>-->
 							<div class="flex justify-end q-gutter-x-xs">
 								<!-- TODO: just for distributors -->
 							</div>
@@ -84,7 +89,9 @@
 </template>
 
 <script>
+import DonorOperationsMenu from "../donor/DonorOperationsMenu.vue";
 export default {
+	components: { DonorOperationsMenu },
 	props: {
 		data: { type: Array, required: true },
 		columns: { type: Array, required: true },
