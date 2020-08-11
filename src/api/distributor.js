@@ -24,7 +24,7 @@ export default {
 		return success && !error;
 	},
 	async deleteDistributor(id) {
-		const res = await axios.put(`${url}/${id}`);
+		const res = await axios.delete(`${url}/${id}`);
 		const { success, error } = res.data;
 		return success && !error;
 	},

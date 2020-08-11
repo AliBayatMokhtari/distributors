@@ -57,9 +57,12 @@
 					<q-td :props="props" key="operations">
 						<div>
 							<q-btn icon="more_vert" flat round dense>
+								<distributor-operations-menu @edit="$emit('edit', props.row.id)"
+															 @wantToDelete="$emit('delete',
+															 props.row.id)" v-if="what === 1" />
 								<DonorOperationsMenu @edit="$emit('edit', props.row.id)"
 													 @wantToDelete="$emit('delete',
-													 props.row.id)" />
+													 props.row.id)" v-if="what === 2" />
 							</q-btn>
 <!--							<q-btn-->
 <!--								@click="$emit('edit', props.row.id)"-->
@@ -90,8 +93,9 @@
 
 <script>
 import DonorOperationsMenu from "../donor/DonorOperationsMenu.vue";
+import DistributorOperationsMenu from "../distributor/DistributorOperationsMenu.vue";
 export default {
-	components: { DonorOperationsMenu },
+	components: { DonorOperationsMenu, DistributorOperationsMenu },
 	props: {
 		data: { type: Array, required: true },
 		columns: { type: Array, required: true },
@@ -100,6 +104,7 @@ export default {
 		title: { type: String, required: true },
 		tableHeaderClass: { type: String, default: "bg-primary text-white" },
 		tablePagination: { type: Object, required: true },
+		what: { type: Number, required: true }
 	},
 	data: () => ({
 		pagination: {

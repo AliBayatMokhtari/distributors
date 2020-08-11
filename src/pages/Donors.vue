@@ -8,6 +8,7 @@
                       @addNew="showAddDialog"
                       @edit="id => showEditDialog(id)"
                       @delete="showDeleteDialog"
+                      :what="2"
         />
         <edit-donor ref="editDialog" @reloadTable="reloadTable" />
         <delete :what="2" :loading="deleteBtnLoading" @onDeleteButtonClicked="deleteDonor"
